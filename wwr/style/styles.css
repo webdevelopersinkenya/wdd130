@@ -1,0 +1,16 @@
+h1{
+    color:red
+}
+
+p {
+    color: blue;
+    text-align: justify;
+    text-indent: 5px;
+    text-align-last: right;
+  }
+  
+div{
+    border:1px dashed grey;
+  }
+
+
