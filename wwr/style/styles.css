@@ -1,6 +1,6 @@
 
 #background {
-  height: 725px;
+  height: 100px;
   grid-column: 1/11;
   grid-row: 4/9;
 }
@@ -10,10 +10,10 @@ body {
 }
 header {
   background-color:grey;
-  display: grid;
-  grid-template-columns: 100px auto;
-  margin-left:auto;
-  margin-right:auto;
+  display: block;
+  grid-template-columns: 50% ;
+  margin:1%;
+  padding: 1%;
 }
 .home-title{
   position: relative;
@@ -32,10 +32,11 @@ header {
 }
 .card-img {
   float: left;
-  min-width: 40%;
-  padding: 30px;
-  margin-left:30px;
-  margin-right:40px;
+  min-width: 29%;
+  padding: 1%;
+  margin:1%;
+  background-color:white;
+  
 }
 .button-box{
   height:300px;
@@ -96,6 +97,12 @@ nav {
    grid-column:2/7;
    grid-row:5/8;
  }
+ benefits{
+  width:100px;
+  text-align:center;
+  background:gray;
+  
+ }
  .rapids-card{
    grid: column 8/10;
    grid-row: 2/3;
@@ -106,10 +113,9 @@ nav {
  }
 footer {
   background-color:lightslategray;
-  padding: 25px 50px;
-  margin-top: 200px; 
+  padding: 1%;
+  margin: 1%; 
   display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 .card-img {
@@ -126,14 +132,14 @@ footer {
   padding: 35px;
   grid-column: 6/10;
   grid-row: 6/7;
-  box-shadow: 5px 5px 10px #6f7364;
+  box-shadow:  10px #6f7364;
   line-height: 1.5em;
 }
 .mountains {
   width: 100%;
   grid-column: 2/7;
   grid-row: 5/8;
-  box-shadow: 5px 5px 10px #6f7364;
+  box-shadow: 10px #6f7364;
 }
   
 
@@ -160,8 +166,10 @@ footer p a:hover {
 }   
    
 h1 {
-  margin: 50px 0;
-  color:red;
+  margin: 1%;
+  color:black;
+  text-align: left;
+
 }
 a {
   color: white;
@@ -178,14 +186,19 @@ img {
   font-size: 2em;
 }
 body {
-  background-color: #fcfbfb;
+  background-color:gray;
   font-family: Raleway, Arial, sans-serif;
   font-size: 22px;
   margin: 0;
   padding: 0;
 }
 h2 {
-  margin: 0;
+  margin: 1%;
+  padding:1%;
+  float:left;
+  font-family:Arial;
+  color:aqua;
+  background-color:#6f7364;
 }
 .book, .join {
   background-color: #d9c2a3;
@@ -207,11 +220,17 @@ h2 {
       flex-direction: column;
   }
   nav a {
+      float:right;
       display: block;
-      padding: 15px;
+      width:29%;
+      height: 5%;
+      padding:15%;
+      
+      
   }
   #hero {
       margin-top: 0;
+      background-color:blue;
   }
   #hero-msg {
       margin-top: 0;
