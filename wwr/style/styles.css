@@ -97,10 +97,9 @@ nav {
    grid-column:2/7;
    grid-row:5/8;
  }
- benefits{
-  width:100px;
-  text-align:center;
-  background:gray;
+ rivers-card , aside{
+  float:left;
+  width:46%;
   
  }
  .rapids-card{
