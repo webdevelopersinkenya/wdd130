@@ -107,11 +107,11 @@ h4{
 
 }
 
-.msg h2{
+/*.msg h2{
     color: rgb(19, 14, 14);
     font-family: Roboto, Helvetica,sans-serif;
 }
-
+*/
 .msg p{
     color: rgb(25, 20, 20);
     font-family: 'Roboto', Helvetica,sans-serif;
@@ -144,6 +144,7 @@ body {
   padding: 4em;
   font-size: 18px;
   text-align: center;
+  background-color:#5c4645
 }
 img {
   display: block;
@@ -224,13 +225,14 @@ nav a {
   min-width: 120px;
   text-decoration: none;
   padding: 10px;
+  color:aqua;
 
 }
 nav a:link, nav a:visited {
   color: var(--nav-link-color);
 }
 nav a:hover {
-  color: var(--nav-hover-link-color);
+  color:var(--nav-hover-link-color);
   background-color: var(--nav-hover-background-color);
 }
 
