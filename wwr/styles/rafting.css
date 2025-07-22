@@ -1,254 +1,194 @@
-/* CSS Variables for Color Scheme and Fonts */
-:root {
-    --primary-color: #0077B6; /* A shade of blue, e.g., for headings, accents */
-    --secondary-color: #00B4D8; /* A lighter shade of blue, e.g., for navigation background */
-    --accent1-color: #90E0EF; /* A very light blue, e.g., for hero overlay background */
-    --accent2-color: #CAF0F8; /* An even lighter blue, e.g., for body text color or subtle backgrounds */
-    --heading-font: 'Roboto', sans-serif; /* Font for h1, h2 */
-    --body-font: 'Open Sans', sans-serif; /* Font for general body text */
-}
-
-/* Universal Selector to Reset Box Model Properties */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling: Apply body font and text color */
+/* General Body Styles */
 body {
-    font-family: var(--body-font);
-    color: #333; /* A dark grey for better readability against lighter backgrounds */
-    line-height: 1.6; /* Improve readability of text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0 auto;        /* Center the body content */
+    padding: 0 16px;       /* Some horizontal padding */
+    max-width: 1100px;     /* Reduce width (try 960px, 1000px, or 1100px as needed) */
+    font-size: 15px;
+    line-height: 1.4;
 }
 
-/* Limit Page Width and Center Content for Header, Main, and Footer */
-header, main, footer {
-    width: 840px; /* Fixed width as per instructions */
-    margin: 0 auto; /* Centers the block elements horizontally */
-}
 
-/* Heading Styling: Apply heading font and primary color */
-h1, h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-}
 
-/* Basic Spacing for Navigation, Paragraphs, Sections, and Articles */
-nav, p, section, article {
-    margin: 16px; /* Margin around elements */
-    padding: 8px; /* Padding inside elements */
-}
-
-/* Header Specific Styling */
+/* Header Styles */
 header {
-    display: flex; /* Use flexbox for logo and nav layout */
-    justify-content: space-between; /* Space between logo and nav */
-    align-items: center; /* Vertically align items */
-    background-color: var(--secondary-color); /* Background color for header */
-    padding: 10px 20px; /* Padding inside header */
-    border-radius: 8px; /* Rounded corners for header */
-    margin-top: 20px; /* Add some space from the top of the page */
+    background-color: #A78BFA; /* Purple from wireframe */
+    padding: 1rem 2rem;
+    display: grid; /* Use CSS Grid for header layout */
+    grid-template-columns: auto 1fr; /* Logo on left, nav takes remaining space */
+    align-items: center;
+    gap: 20px;
+    border-radius: 8px; /* Rounded corners */
+    margin: 10px;
 }
 
-header img {
-    width: 80px; /* Adjust logo size */
+header .logo {
+    max-width: 100px;
     height: auto;
-    border-radius: 5px; /* Slightly rounded corners for logo */
+    border-radius: 8px; /* Rounded corners for logo */
 }
 
-header nav a {
-    color: white; /* Text color for navigation links */
-    text-decoration: none; /* Remove underline from nav links */
-    padding: 10px 15px; /* Padding for click area */
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
-    border-radius: 5px; /* Rounded corners for nav links */
+nav {
+    display: flex; /* Use CSS Flex for navigation links */
+    justify-content: flex-end; /* Align links to the right */
+    gap: 15px;
 }
 
-header nav a:hover {
-    background-color: var(--primary-color); /* Hover effect for nav links */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-/* Social Media Navigation Styling in Footer */
-.socialmedia {
-    display: flex; /* Use flexbox for social media icons */
-    justify-content: center; /* Center social media icons */
-    gap: 15px; /* Space between icons */
-    padding: 10px;
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-.socialmedia a {
-    text-decoration: none; /* Remove underline from social media links */
-}
-
-.socialmedia img {
-    width: 30px; /* Size of social media icons */
-    height: auto;
-    transition: transform 0.2s ease; /* Smooth scale effect on hover */
-}
-
-.socialmedia img:hover {
-    transform: scale(1.1); /* Slightly enlarge icons on hover */
-}
-
-/* Footer Specific Styling */
-footer {
-    display: flex; /* Use flexbox for footer content */
-    justify-content: space-between; /* Space between copyright and social media */
-    align-items: center; /* Vertically align items */
-    background-color: var(--secondary-color); /* Background color for footer */
-    color: white; /* Text color for footer */
+/* Main Content Styles */
+main {
     padding: 20px;
-    margin-top: 30px; /* Space above the footer */
-    border-radius: 8px; /* Rounded corners for footer */
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-footer p {
-    margin: 0; /* Remove default margin from footer paragraph */
-    padding: 0; /* Remove default padding from footer paragraph */
-    font-size: 0.9em; /* Smaller font size for copyright */
-}
-
-
-/* Hero Div Styling with Overlays */
-.hero {
-    position: relative; /* Container for absolutely positioned children */
-    margin-bottom: 30px; /* Space below the hero section */
-}
-
-.hero img {
-    display: block; /* Ensures the image behaves as a block element */
-    width: 100%; /* Fills the entire width of its container */
-    height: auto; /* Maintains aspect ratio */
-    border-radius: 8px; /* Rounded corners for the hero image */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-}
-
-/* Styling for the H1 title overlay */
-.hero h1 {
-    position: absolute; /* Positioned relative to the .hero div */
-    top: 20px; /* Distance from the top of the .hero div */
-    width: 100%; /* Spans the full width of the .hero div */
-    padding: 16px; /* Padding around the text */
-    text-align: center; /* Center the text */
-    opacity: 0.85; /* Slightly transparent background */
-    background-color: var(--accent1-color); /* Background color for the title banner */
-    color: #fff; /* White text for contrast */
-    font-size: 2.5em; /* Larger font size for impact */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
     border-radius: 8px; /* Rounded corners */
 }
 
-/* Styling for the article overlay */
-.hero article {
-    position: absolute; /* Positioned relative to the .hero div */
-    top: 150px; /* Adjust vertical position as needed */
-    left: 50%; /* Start at the horizontal center */
-    transform: translateX(-50%); /* Shift left by half its width to truly center */
-    width: 70%; /* Adjust width of the article overlay */
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-    padding: 25px;
-    border-radius: 12px; /* More rounded corners for a softer look */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow for floating effect */
-    text-align: left; /* Align text within the article */
-    max-height: 400px; /* Limit height to prevent overflow on smaller screens */
-    overflow-y: auto; /* Add scroll if content exceeds max-height */
+h1, h2 {
+    color: #6D28D9; /* Darker purple */
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Styling for the image inside the article overlay */
-.hero article img {
-    float: right; /* Float image to the right of the text */
-    width: 125px; /* Specific width for this image */
-    height: auto; /* Maintain aspect ratio */
-    margin-left: 20px; /* Space between image and text */
-    margin-bottom: 10px; /* Space below the image if text wraps */
-    border: 3px solid var(--primary-color); /* Border around the image */
-    border-radius: 10px; /* Rounded corners for the article image */
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+/* Hero Section */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
 }
 
-/* Styling for the "Adventure Awaits You!" section images */
-main section:last-of-type img { /* Targets images in the last section of main */
-    width: calc(33.33% - 20px); /* Approx 3 images per row with spacing */
+.hero-content p {
+    flex: 1;
+}
+
+.hero-image {
+    max-width: 150px;
     height: auto;
-    display: inline-block; /* Allows images to sit side-by-side */
-    margin: 10px; /* Space around each image */
-    border-radius: 8px; /* Rounded corners for rafting images */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-    transition: transform 0.3s ease; /* Smooth scale effect on hover */
+    border-radius: 8px; /* Rounded corners */
 }
 
-main section:last-of-type img:hover {
-    transform: scale(1.05); /* Slightly enlarge images on hover */
+/* History Section */
+.history-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 860px) {
-    header, main, footer {
-        width: 95%; /* Adjust width for smaller screens */
-        margin: 0 auto;
+.history-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Adventure Section (Gallery) */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery figure {
+    margin: 0;
+    text-align: center;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.gallery img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px; /* Rounded corners */
+}
+
+figcaption {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #A78BFA; /* Purple from wireframe */
+    color: white;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin: 10px;
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons img {
+    max-width: 30px;
+    height: auto;
+    margin: 0 5px;
+    border-radius: 8px; /* Rounded corners for social icons */
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .hero-content {
+        flex-direction: row;
+        text-align: left;
     }
 
-    .hero h1 {
-        font-size: 1.8em; /* Smaller font size for H1 on smaller screens */
-        padding: 10px;
+    .history-content {
+        flex-direction: row;
+        text-align: left;
     }
 
-    .hero article {
-        width: 90%; /* Wider article on smaller screens */
-        top: 120px; /* Adjust position */
-        padding: 15px;
+    .history-content p:first-of-type {
+        order: 1; /* First paragraph */
     }
 
-    .hero article img {
-        float: none; /* Don't float on small screens */
-        display: block; /* Make it a block element */
-        margin: 0 auto 15px auto; /* Center image and add bottom margin */
-        width: 100px; /* Smaller image */
+    .history-image {
+        order: 2; /* Image in the middle */
     }
 
-    main section:last-of-type img {
-        width: calc(50% - 20px); /* 2 images per row on smaller screens */
+    .history-content p:last-of-type {
+        order: 3; /* Second paragraph */
+    }
+
+    .gallery figure {
+        flex: 1 1 calc(33.333% - 40px); /* 3 items per row on larger screens */
+        max-width: calc(33.333% - 40px);
     }
 }
 
-@media (max-width: 500px) {
-    header {
-        flex-direction: column; /* Stack logo and nav vertically */
-        padding: 10px;
-    }
-
-    header nav {
-        margin-top: 10px;
-    }
-
-    header nav a {
-        display: block; /* Make nav links full width */
-        text-align: center;
-        margin-bottom: 5px;
-    }
-
-    .hero h1 {
-        font-size: 1.5em; /* Even smaller font size */
-        top: 10px;
-    }
-
-    .hero article {
-        top: 90px; /* Adjust position for very small screens */
-        width: 95%;
-        padding: 10px;
-    }
-
-    main section:last-of-type img {
-        width: calc(100% - 20px); /* 1 image per row on very small screens */
-    }
-
-    footer {
-        flex-direction: column; /* Stack footer content vertically */
-        text-align: center;
-    }
-
-    footer p {
-        margin-bottom: 10px;
+@media (min-width: 1024px) {
+    .gallery figure {
+        flex: 1 1 calc(20% - 40px); /* 5 items per row on very large screens */
+        max-width: calc(20% - 40px);
     }
 }
