@@ -1,0 +1,97 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0 auto;        /* Center the body content */
+    padding: 0 16px;       /* Some horizontal padding */
+    max-width: 900px;      /* Reduced from 1100px */
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+
+
+/* Header Styles */
+header {
+    background-color: #00B4D8; /* Purple from wireframe */
+    padding: 1rem 2rem;
+    display: grid; /* Use CSS Grid for header layout */
+    grid-template-columns: auto 1fr; /* Logo on left, nav takes remaining space */
+    align-items: center;
+    gap: 20px;
+    border-radius: 8px; /* Rounded corners */
+    margin: 10px;
+}
+
+header .logo {
+    max-width: 100px;
+    height: auto;
+    border-radius: 8px; /* Rounded corners for logo */
+}
+
+nav {
+    display: flex; /* Use CSS Flex for navigation links */
+    justify-content: flex-end; /* Align links to the right */
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #0077B6;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #004466;
+}
+
+.trip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.trip-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.trip-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: #004466;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
