@@ -1,0 +1,254 @@
+/* CSS Variables for Color Scheme and Fonts */
+:root {
+    --primary-color: #0077B6; /* A shade of blue, e.g., for headings, accents */
+    --secondary-color: #00B4D8; /* A lighter shade of blue, e.g., for navigation background */
+    --accent1-color: #90E0EF; /* A very light blue, e.g., for hero overlay background */
+    --accent2-color: #CAF0F8; /* An even lighter blue, e.g., for body text color or subtle backgrounds */
+    --heading-font: 'Roboto', sans-serif; /* Font for h1, h2 */
+    --body-font: 'Open Sans', sans-serif; /* Font for general body text */
+}
+
+/* Universal Selector to Reset Box Model Properties */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling: Apply body font and text color */
+body {
+    font-family: var(--body-font);
+    color: #333; /* A dark grey for better readability against lighter backgrounds */
+    line-height: 1.6; /* Improve readability of text */
+}
+
+/* Limit Page Width and Center Content for Header, Main, and Footer */
+header, main, footer {
+    width: 840px; /* Fixed width as per instructions */
+    margin: 0 auto; /* Centers the block elements horizontally */
+}
+
+/* Heading Styling: Apply heading font and primary color */
+h1, h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+/* Basic Spacing for Navigation, Paragraphs, Sections, and Articles */
+nav, p, section, article {
+    margin: 16px; /* Margin around elements */
+    padding: 8px; /* Padding inside elements */
+}
+
+/* Header Specific Styling */
+header {
+    display: flex; /* Use flexbox for logo and nav layout */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Vertically align items */
+    background-color: var(--secondary-color); /* Background color for header */
+    padding: 10px 20px; /* Padding inside header */
+    border-radius: 8px; /* Rounded corners for header */
+    margin-top: 20px; /* Add some space from the top of the page */
+}
+
+header img {
+    width: 80px; /* Adjust logo size */
+    height: auto;
+    border-radius: 5px; /* Slightly rounded corners for logo */
+}
+
+header nav a {
+    color: white; /* Text color for navigation links */
+    text-decoration: none; /* Remove underline from nav links */
+    padding: 10px 15px; /* Padding for click area */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    border-radius: 5px; /* Rounded corners for nav links */
+}
+
+header nav a:hover {
+    background-color: var(--primary-color); /* Hover effect for nav links */
+}
+
+/* Social Media Navigation Styling in Footer */
+.socialmedia {
+    display: flex; /* Use flexbox for social media icons */
+    justify-content: center; /* Center social media icons */
+    gap: 15px; /* Space between icons */
+    padding: 10px;
+}
+
+.socialmedia a {
+    text-decoration: none; /* Remove underline from social media links */
+}
+
+.socialmedia img {
+    width: 30px; /* Size of social media icons */
+    height: auto;
+    transition: transform 0.2s ease; /* Smooth scale effect on hover */
+}
+
+.socialmedia img:hover {
+    transform: scale(1.1); /* Slightly enlarge icons on hover */
+}
+
+/* Footer Specific Styling */
+footer {
+    display: flex; /* Use flexbox for footer content */
+    justify-content: space-between; /* Space between copyright and social media */
+    align-items: center; /* Vertically align items */
+    background-color: var(--secondary-color); /* Background color for footer */
+    color: white; /* Text color for footer */
+    padding: 20px;
+    margin-top: 30px; /* Space above the footer */
+    border-radius: 8px; /* Rounded corners for footer */
+}
+
+footer p {
+    margin: 0; /* Remove default margin from footer paragraph */
+    padding: 0; /* Remove default padding from footer paragraph */
+    font-size: 0.9em; /* Smaller font size for copyright */
+}
+
+
+/* Hero Div Styling with Overlays */
+.hero {
+    position: relative; /* Container for absolutely positioned children */
+    margin-bottom: 30px; /* Space below the hero section */
+}
+
+.hero img {
+    display: block; /* Ensures the image behaves as a block element */
+    width: 100%; /* Fills the entire width of its container */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Rounded corners for the hero image */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Styling for the H1 title overlay */
+.hero h1 {
+    position: absolute; /* Positioned relative to the .hero div */
+    top: 20px; /* Distance from the top of the .hero div */
+    width: 100%; /* Spans the full width of the .hero div */
+    padding: 16px; /* Padding around the text */
+    text-align: center; /* Center the text */
+    opacity: 0.85; /* Slightly transparent background */
+    background-color: var(--accent1-color); /* Background color for the title banner */
+    color: #fff; /* White text for contrast */
+    font-size: 2.5em; /* Larger font size for impact */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Styling for the article overlay */
+.hero article {
+    position: absolute; /* Positioned relative to the .hero div */
+    top: 150px; /* Adjust vertical position as needed */
+    left: 50%; /* Start at the horizontal center */
+    transform: translateX(-50%); /* Shift left by half its width to truly center */
+    width: 70%; /* Adjust width of the article overlay */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 25px;
+    border-radius: 12px; /* More rounded corners for a softer look */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow for floating effect */
+    text-align: left; /* Align text within the article */
+    max-height: 400px; /* Limit height to prevent overflow on smaller screens */
+    overflow-y: auto; /* Add scroll if content exceeds max-height */
+}
+
+/* Styling for the image inside the article overlay */
+.hero article img {
+    float: right; /* Float image to the right of the text */
+    width: 125px; /* Specific width for this image */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 20px; /* Space between image and text */
+    margin-bottom: 10px; /* Space below the image if text wraps */
+    border: 3px solid var(--primary-color); /* Border around the image */
+    border-radius: 10px; /* Rounded corners for the article image */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Styling for the "Adventure Awaits You!" section images */
+main section:last-of-type img { /* Targets images in the last section of main */
+    width: calc(33.33% - 20px); /* Approx 3 images per row with spacing */
+    height: auto;
+    display: inline-block; /* Allows images to sit side-by-side */
+    margin: 10px; /* Space around each image */
+    border-radius: 8px; /* Rounded corners for rafting images */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    transition: transform 0.3s ease; /* Smooth scale effect on hover */
+}
+
+main section:last-of-type img:hover {
+    transform: scale(1.05); /* Slightly enlarge images on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 860px) {
+    header, main, footer {
+        width: 95%; /* Adjust width for smaller screens */
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 1.8em; /* Smaller font size for H1 on smaller screens */
+        padding: 10px;
+    }
+
+    .hero article {
+        width: 90%; /* Wider article on smaller screens */
+        top: 120px; /* Adjust position */
+        padding: 15px;
+    }
+
+    .hero article img {
+        float: none; /* Don't float on small screens */
+        display: block; /* Make it a block element */
+        margin: 0 auto 15px auto; /* Center image and add bottom margin */
+        width: 100px; /* Smaller image */
+    }
+
+    main section:last-of-type img {
+        width: calc(50% - 20px); /* 2 images per row on smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+        padding: 10px;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header nav a {
+        display: block; /* Make nav links full width */
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .hero h1 {
+        font-size: 1.5em; /* Even smaller font size */
+        top: 10px;
+    }
+
+    .hero article {
+        top: 90px; /* Adjust position for very small screens */
+        width: 95%;
+        padding: 10px;
+    }
+
+    main section:last-of-type img {
+        width: calc(100% - 20px); /* 1 image per row on very small screens */
+    }
+
+    footer {
+        flex-direction: column; /* Stack footer content vertically */
+        text-align: center;
+    }
+
+    footer p {
+        margin-bottom: 10px;
+    }
+}
