@@ -24,7 +24,7 @@ body {
 
 /* Limit Page Width and Center Content for Header, Main, and Footer */
 header, main, footer {
-    width: 840px; /* Fixed width as per instructions */
+    max-width: 840px; /* Changed to max-width for better responsiveness */
     margin: 0 auto; /* Centers the block elements horizontally */
 }
 
@@ -36,7 +36,7 @@ h1, h2 {
 
 /* Basic Spacing for Navigation, Paragraphs, Sections, and Articles */
 nav, p, section, article {
-    margin: 16px; /* Margin around elements */
+    margin: 16px 0; /* Adjusted margin to prevent excessive horizontal spacing from default */
     padding: 8px; /* Padding inside elements */
 }
 
@@ -109,7 +109,6 @@ footer p {
     font-size: 0.9em; /* Smaller font size for copyright */
 }
 
-
 /* Hero Div Styling with Overlays */
 .hero {
     position: relative; /* Container for absolutely positioned children */
@@ -167,18 +166,43 @@ footer p {
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
-/* Styling for the "Adventure Awaits You!" section images */
-main section:last-of-type img { /* Targets images in the last section of main */
-    width: calc(33.33% - 20px); /* Approx 3 images per row with spacing */
-    height: auto;
-    display: inline-block; /* Allows images to sit side-by-side */
-    margin: 10px; /* Space around each image */
-    border-radius: 8px; /* Rounded corners for rafting images */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-    transition: transform 0.3s ease; /* Smooth scale effect on hover */
+/* Adventure Gallery Section Styling */
+.adventure-gallery {
+    max-width: 1000px; /* Allows the gallery to be wider than main content */
+    margin: 40px auto; /* Centers the gallery and adds vertical space */
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 10px; /* Added rounded corners for the section */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-main section:last-of-type img:hover {
+.adventure-gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Using primary color for consistency */
+}
+
+/* Image Grid Styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default to 4 columns */
+    gap: 20px; /* Spacing between images */
+    justify-items: center; /* Center images within their grid cells */
+    align-items: center; /* Vertically align images if they have different heights */
+}
+
+.image-grid img {
+    width: 100%;
+    max-width: 220px; /* Max width for individual images */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures images fill their space without distortion */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.image-grid img:hover {
     transform: scale(1.05); /* Slightly enlarge images on hover */
 }
 
@@ -207,8 +231,9 @@ main section:last-of-type img:hover {
         width: 100px; /* Smaller image */
     }
 
-    main section:last-of-type img {
-        width: calc(50% - 20px); /* 2 images per row on smaller screens */
+    /* Adjust image grid for tablets (2 columns) */
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -239,8 +264,9 @@ main section:last-of-type img:hover {
         padding: 10px;
     }
 
-    main section:last-of-type img {
-        width: calc(100% - 20px); /* 1 image per row on very small screens */
+    /* Adjust image grid for mobile (1 column) */
+    .image-grid {
+        grid-template-columns: 1fr;
     }
 
     footer {

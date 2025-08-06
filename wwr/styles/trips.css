@@ -89,7 +89,9 @@ h1 {
 }
 
 footer {
-  background-color: #004466;
+  background-color: #00B4D8; 
+; /* Darker purple */
+;
   color: white;
   text-align: center;
   padding: 1rem;
