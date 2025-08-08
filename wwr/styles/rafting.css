@@ -1,39 +1,52 @@
-/* General Body Styles */
-/* General Body Styles */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    margin: 0 auto;        /* Center the body content */
-    padding: 0 16px;       /* Some horizontal padding */
-    max-width: 900px;      /* Reduced from 1100px */
-    font-size: 15px;
-    line-height: 1.4;
+/* Universal Selector to Reset Box Model Properties */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* General Body Styles: Applies to all pages */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5; /* Light gray background for readability */
+    color: #333;
+    max-width: 900px; /* Overall content width for all pages */
+    margin: 0 auto; /* Centers the body content */
+    padding: 0 16px; /* Horizontal padding for smaller screens */
+    font-size: 15px;
+    line-height: 1.4;
+    background-color: #f4e1d2;
+}
 
+/* Header, Main, and Footer Alignment: All will fit within body's max-width */
+header,
+main,
+footer {
+    max-width: 100%; /* Ensures they fit within the parent body's max-width */
+    margin: 20px auto; /* Centers these sections horizontally */
+}
 
-/* Header Styles */
+/* --- Header Styles --- */
 header {
-    background-color: #00B4D8; /* Purple from wireframe */
-    padding: 1rem 2rem;
-    display: grid; /* Use CSS Grid for header layout */
-    grid-template-columns: auto 1fr; /* Logo on left, nav takes remaining space */
+    background-color: #00B4D8;
+    padding: 1.5rem 2rem;
+    display: flex; /* Changed to flex for simpler logo and nav layout */
+    justify-content: space-between; /* Space between logo and nav */
     align-items: center;
     gap: 20px;
-    border-radius: 8px; /* Rounded corners */
-    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid goldenrod; /* Added goldenrod border */
 }
 
 header .logo {
     max-width: 100px;
     height: auto;
-    border-radius: 8px; /* Rounded corners for logo */
+    border-radius: 8px;
 }
 
 nav {
-    display: flex; /* Use CSS Flex for navigation links */
-    justify-content: flex-end; /* Align links to the right */
+    display: flex;
+    justify-content: flex-end;
     gap: 15px;
 }
 
@@ -43,36 +56,93 @@ nav a {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    font-weight: bold; /* Ensures navigation links are bold */
 }
 
 nav a:hover {
     background-color: #0077B6;
 }
 
-/* Main Content Styles */
+/* --- Main Content Styles: Applies to all pages --- */
 main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
     background-color: #fff;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color:light gray;
+    /* `max-width` and `margin` handled by the `header, main, footer` rule above */
 }
 
 section {
-    margin-bottom: 40px;
-    padding: 20px;
+    margin-bottom: 20px; /* Adjusted margin for sections */
+    padding: 15px; /* Adjusted padding for sections */
     border: 1px solid #ddd;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
+    background-color: #f8f8f8; /* Consistent light background for all sections */
 }
 
-h1, h2 {
-    color: #0077B6; /* Darker purple */
+h1,
+h2 {
+    color: #0077B6;
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Hero Section */
+/* --- About Us Page Specific Styles --- */
+
+/* Hero Section (about.html) */
+.hero {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    opacity: 0.85;
+    background-color: #90E0EF;
+    color: #fff;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.hero article {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.hero article img {
+    float: right;
+    width: 125px;
+    height: auto;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border: 3px solid #0077B6;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
 .hero-content {
     display: flex;
     flex-direction: column;
@@ -88,10 +158,50 @@ h1, h2 {
 .hero-image {
     max-width: 150px;
     height: auto;
-    border-radius: 8px; /* Rounded corners */
+    border-color: goldenrod;
+    background-color: gray;
 }
 
-/* History Section */
+/* Adventure Gallery Section Styling */
+.adventure-gallery {
+    max-width: 1000px; /* Allows the gallery to be wider than main content */
+    margin: 40px auto; /* Centers the gallery and adds vertical space */
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 10px; /* Added rounded corners for the section */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.adventure-gallery h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Using primary color for consistency */
+}
+
+/* Image Grid Styling */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default to 4 columns */
+    gap: 20px; /* Spacing between images */
+    justify-items: center; /* Center images within their grid cells */
+    align-items: center; /* Vertically align images if they have different heights */
+}
+
+.image-grid img {
+    width: 100%;
+    max-width: 220px; /* Max width for individual images */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures images fill their space without distortion */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.image-grid img:hover {
+    transform: scale(1.05); /* Slightly enlarge images on hover */
+}
+/* History Section (about.html) */
 .history-content {
     display: flex;
     flex-direction: column;
@@ -103,10 +213,10 @@ h1, h2 {
 .history-image {
     max-width: 200px;
     height: auto;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
 }
 
-/* Adventure Section (Gallery) */
+/* Adventure Gallery Section (about.html) */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -119,33 +229,154 @@ h1, h2 {
     text-align: center;
     border: 1px solid #eee;
     padding: 10px;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
     background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .gallery img {
-    max-width: 200px;
+    max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
 }
 
 
+/* --- Trips Page Specific Styles --- */
 
-/* Footer Styles */
-footer {
-    background-color: #00B4D8; /* Purple from wireframe */
-    color: white;
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.trip-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.trip-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+/* --- Contact Us Page Specific Styles --- */
+
+/* Employee Grid */
+.employee-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.employee-card {
+    width: 200px;
     text-align: center;
-    padding: 1.5rem 2rem;
-    margin: 10px;
-    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.employee-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.employee-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Form Styles */
+form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    gap: 1rem;
+    max-width: 600px;
+    margin: auto;
 }
 
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="radio"],
+form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    background-color: #0077B6;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+    background-color: #00B4D8;
+}
+
+/* --- Footer Styles: Applies to all pages --- */
+footer {
+    background-color: #00B4D8;
+    color: white;
+    text-align: center;
+    padding: 1rem; /* Consistent padding */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    gap: 10px;
+    border: 2px solid goldenrod; /* Goldenrod border for footer */
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+}
+
+/* Social Media Navigation Styling in Footer */
+.socialmedia {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    max-width: 30px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
 .social-icons img {
     max-width: 30px;
     height: auto;
@@ -153,39 +384,88 @@ footer {
     border-radius: 8px; /* Rounded corners for social icons */
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-    .hero-content {
-        flex-direction: row;
-        text-align: left;
-    }
 
+.socialmedia img:hover {
+    transform: scale(1.1);
+}
+
+/* --- Responsive Design --- */
+@media (min-width: 768px) {
+    /* About Us specific responsive rules */
+    .hero-content,
     .history-content {
         flex-direction: row;
         text-align: left;
     }
 
     .history-content p:first-of-type {
-        order: 1; /* First paragraph */
+        order: 1;
     }
 
     .history-image {
-        order: 2; /* Image in the middle */
+        order: 2;
     }
 
     .history-content p:last-of-type {
-        order: 3; /* Second paragraph */
+        order: 3;
     }
 
     .gallery figure {
-        flex: 1 1 calc(33.333% - 40px); /* 3 items per row on larger screens */
+        flex: 1 1 calc(33.333% - 40px);
         max-width: calc(33.333% - 40px);
     }
 }
 
 @media (min-width: 1024px) {
     .gallery figure {
-        flex: 1 1 calc(20% - 40px); /* 5 items per row on very large screens */
+        flex: 1 1 calc(20% - 40px);
         max-width: calc(20% - 40px);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Contact Us specific responsive rule */
+    .employee-card {
+        width: 100%;
+    }
+
+    /* General responsive rules for smaller screens */
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header nav a {
+        display: block;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+        top: 10px;
+    }
+
+    .hero article {
+        top: 90px;
+        width: 95%;
+        padding: 10px;
+    }
+
+    .gallery figure {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer p {
+        margin-bottom: 10px;
     }
 }

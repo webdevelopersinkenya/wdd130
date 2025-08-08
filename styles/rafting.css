@@ -1,0 +1,99 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Roboto:wght@400;500&display=swap');
+
+/* Apply fonts */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p, a, li {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Limit main content width */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Profile picture inside main */
+main img {
+  width: 150px;
+  height: auto;
+}
+nav {
+  display: flex;
+  justify-content: center; /* Centers the whole nav horizontally */
+  padding: 10px;
+}
+header {
+  background-color: #0077B6;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  height: 70px;
+  border: 3px solid goldenrod; /* Added full border definition */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f4e1d2;
+  /* Add this line to reduce the width */
+  max-width: 960px; /* Or any other width you prefer */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+.section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
+}
+.side-by-side {
+  display: flex;
+  align-items: center; /* This centers the items vertically */
+  gap: 20px; /* Space between the image and the text */
+}
+.side-by-side p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+.section-image {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Aside image */
+aside img {
+  width: 200px;
+  height: auto;
+}
+
+footer {
+  background-color: #0077B6;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 10px;
+  height: 70px;
+  border: 3px solid goldenrod; /*  Added full border definition */
+}
